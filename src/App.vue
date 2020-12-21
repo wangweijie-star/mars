@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
+  <div>测试分支修改数据</div>
   <router-view/>
 </template>
 
