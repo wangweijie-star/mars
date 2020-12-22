@@ -1,0 +1,25 @@
+// 首页下面导航样式设置
+.home{
+  .van-tabbar-item:nth-child(3){
+    .van-tabbar-item__icon{
+      color: green!important;
+      transform: translateY(-13px);
+      border: 5px solid #000;
+      border-radius: 100%;
+      .iconfont{
+        font-size: 35px;
+        background: #fff;
+        border-radius: 50%;
+      }
+    }
+    .van-tabbar-item__text{
+      transform: translateY(-13px);
+    }
+  }
+}
+// index样式设置
+.index{
+  
+}
+      
+    

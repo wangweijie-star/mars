@@ -1,0 +1,149 @@
+{
+  "id": "2284124",
+  "name": "mars",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "593312",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "779527",
+      "name": "棒球",
+      "font_class": "bangqiu",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    },
+    {
+      "icon_id": "814220",
+      "name": "地点",
+      "font_class": "didian",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1322821",
+      "name": "展览",
+      "font_class": "zhanlan",
+      "unicode": "e80c",
+      "unicode_decimal": 59404
+    },
+    {
+      "icon_id": "1609488",
+      "name": "酒店",
+      "font_class": "jiudian",
+      "unicode": "e77a",
+      "unicode_decimal": 59258
+    },
+    {
+      "icon_id": "1974298",
+      "name": "望远镜 (11)",
+      "font_class": "wangyuanjing",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "2229429",
+      "name": "沐浴露",
+      "font_class": "muyulou",
+      "unicode": "e808",
+      "unicode_decimal": 59400
+    },
+    {
+      "icon_id": "4537285",
+      "name": "记录饮食",
+      "font_class": "jiluyinshi",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "6463322",
+      "name": "三个点",
+      "font_class": "sangedian",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "6881782",
+      "name": "地点",
+      "font_class": "didian1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "7402407",
+      "name": "啤酒",
+      "font_class": "pijiu",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "8295271",
+      "name": "当地玩乐",
+      "font_class": "dangdiwanle",
+      "unicode": "e864",
+      "unicode_decimal": 59492
+    },
+    {
+      "icon_id": "9400224",
+      "name": "评论 ",
+      "font_class": "pinglun",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "9885892",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "10574427",
+      "name": "发布",
+      "font_class": "fabu",
+      "unicode": "e7d6",
+      "unicode_decimal": 59350
+    },
+    {
+      "icon_id": "11226105",
+      "name": "咖啡",
+      "font_class": "kafei",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "12912505",
+      "name": "餐厅",
+      "font_class": "canting",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "13368220",
+      "name": "房屋",
+      "font_class": "fangwu",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "13602554",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "18091170",
+      "name": "点赞",
+      "font_class": "zanpress",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}
