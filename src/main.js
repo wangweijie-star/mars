@@ -28,9 +28,18 @@ app.use(router)
 app.use(Tabbar)
 app.use(TabbarItem)
 app.use(Search)
+<<<<<<< HEAD
 app.use(Swipe)
 app.use(SwipeItem)
 app.use(Field)
 app.use(NavBar)
 app.use(Button)
+=======
+app.use(Field)
+app.use(NavBar)
+app.use(Button)
+
+app.use(Swipe)
+app.use(SwipeItem)
+>>>>>>> yankun
 app.mount('#app')

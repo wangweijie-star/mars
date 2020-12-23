@@ -21,7 +21,8 @@ export default defineComponent({
   },
   methods: {
     left () {
-      this.$router.go(-1)
+      this.$router.back(1)
+      // console.log(1)
     }
   }
 })
