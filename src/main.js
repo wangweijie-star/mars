@@ -13,7 +13,10 @@ import {
   NavBar,
   Button,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  Grid,
+  GridItem,
+  Image as VanImage
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -33,4 +36,7 @@ app.use(SwipeItem)
 app.use(Field)
 app.use(NavBar)
 app.use(Button)
+app.use(Grid)
+app.use(GridItem)
+app.use(VanImage)
 app.mount('#app')
