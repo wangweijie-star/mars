@@ -1,50 +1,62 @@
 <template>
   <router-view />
   <!-- 底部导航 -->
-  <div class="home">
-    <van-tabbar v-model="active" router :placeholder="true" inactive-color="#fff" active-color="green">
-      <van-tabbar-item v-for="item in state.tabbarList" :key="item.title" :to="item.to">
-        <span>{{ item.title }}</span>
-        <template #icon>
-          <span class="iconfont" :class="item.icon"></span>
-        </template>
-      </van-tabbar-item>
-    </van-tabbar>
-  </div>
+
+    <div class="home">
+      <keep-alive>
+        <van-tabbar v-model="active" router :placeholder="true" inactive-color="#fff" active-color="green">
+          <van-tabbar-item v-for="item in state.tabbarList" :key="item.title" :to="item.to" :replace='item.replace'>
+            <span>{{ item.title }}</span>
+            <template #icon>
+              <span class="iconfont" :class="item.icon"></span>
+            </template>
+          </van-tabbar-item>
+      </van-tabbar>
+      </keep-alive>
+    </div>
+
 </template>
 
 <script>
 // 引入vue3.0 setup中用ref定义常量 用reactive用来定义复杂类型
 import { ref, reactive } from 'vue'
 export default {
+
   setup () {
-    const active = ref(0)
+    var index = ref(0)
+    const active = ref(index)
     const state = reactive({
       tabbarList: [
         {
           title: '首页',
           icon: 'icon-didian1',
-          to: '/index'
+          to: '/index',
+          replace: true
+
         },
         {
           title: '发现',
           icon: 'icon-wangyuanjing',
-          to: '/find'
+          to: '/find',
+          replace: true
         },
         {
           title: '发布',
           icon: 'icon-fabu',
-          to: '/publish'
+          to: '/publish',
+          replace: true
         },
         {
           title: '消息',
           icon: 'icon-xiaoxi',
-          to: '/message'
+          to: '/message',
+          replace: true
         },
         {
           title: '我的',
           icon: 'icon-wode',
-          to: '/mine'
+          to: '/mine',
+          replace: true
         }
       ]
     })
