@@ -11,10 +11,14 @@ import {
   Search,
   Field,
   NavBar,
-  Button
+  Button,
+  Swipe,
+  SwipeItem
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
+// 引入移动端适配定义字体大小
+import 'amfe-flexible'
 
 const app = createApp(App)
 app.use(store)
@@ -26,4 +30,6 @@ app.use(Field)
 app.use(NavBar)
 app.use(Button)
 
+app.use(Swipe)
+app.use(SwipeItem)
 app.mount('#app')
