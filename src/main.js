@@ -8,6 +8,8 @@ import './assets/font/iconfont.css'
 import { Tabbar, TabbarItem, Search } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
+// 发现页样式
+import './assets/css/find.scss'
 
 const app = createApp(App)
 app.use(store)
