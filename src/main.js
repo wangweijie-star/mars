@@ -16,7 +16,9 @@ import {
   SwipeItem,
   Grid,
   GridItem,
-  Image as VanImage
+  Image as VanImage,
+  Tab,
+  Tabs
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -39,4 +41,6 @@ app.use(Button)
 app.use(Grid)
 app.use(GridItem)
 app.use(VanImage)
+app.use(Tab)
+app.use(Tabs)
 app.mount('#app')

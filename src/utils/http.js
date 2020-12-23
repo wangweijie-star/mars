@@ -1,6 +1,6 @@
 // 引入轻提示
 import { Toast } from 'vant'
-// 引入axios 
+// 引入axios
 import axios from 'axios'
 
 // 创建实例
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
 const http = {
   get (url, params) {
     return new Promise((resolve, reject) => {
-      instance.get(url,{
+      instance.get(url, {
         params: params || {}
       })
         .then(res => {
