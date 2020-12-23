@@ -4,7 +4,7 @@
   <p>杭州</p>
   <div class="top">
     <span class="left">mars   |</span>
-    <span class="right">生活记录美食</span>
+    <span class="right">生活记1录美食</span>
   </div>
 </div>
 <div class="icon-list">
