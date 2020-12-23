@@ -18,6 +18,11 @@ const routes = [
         component: () => import('../views/Find.vue')
       },
       {
+        path: '/more',
+        component: () => import('../views/more.vue')
+      },
+
+      {
         path: '/publish',
         component: () => import('../views/Publish.vue')
       },

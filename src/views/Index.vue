@@ -1,63 +1,98 @@
 <template>
-<div class="index">
-  <span class="iconfont icon-didian1"></span>
-  <p>杭州</p>
-  <div class="top">
-    <span class="left">mars   |</span>
-    <span class="right">生活记录美食</span>
+  <heard />
+  <div class="main">
+    <div class="main-one">
+      <div class="main-one-left"></div>
+      <div class="main-one-right">
+        <van-swipe style="height: 150px;" vertical autoplay="1000">
+          <van-swipe-item v-for="item in swiperOne" :key="item">
+            <img :src="item" alt="">
+          </van-swipe-item>
+        </van-swipe>
+      </div>
+    </div>
+    <div class="main-two"></div>
+    <div class="main-three"></div>
   </div>
-</div>
 </template>
 
 <script>
-
+import Heard from '../components/home/Heard'
+import axios from 'axios'
 export default {
   data () {
-    return {}
+    return {
+      swiperOne: []
+    }
   },
-  components: {},
+  components: {
+    Heard
+  },
 
   computed: {},
 
   watch: {},
 
-  methods: {},
+  methods: {
+    getOneList () {
+      axios
+        .get('https://mock.yonyoucloud.com/mock/16547/home/banner')
+        .then(res => {
+          if (res.data.status === 0) {
+            this.swiperOne = res.data.reslut
+          }
+        })
+    }
+  },
 
   created () {},
 
-  mounted () {}
+  mounted () {
+    this.getOneList()
+  }
 
 }
 </script>
 
 <style lang='scss' scoped>
-.index{
-  height: 30px;
-  background: hotpink;
-  padding: 5px 15px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+@import "../assets/css/var.scss";
+.main{
+  height: 300px;
+  background: #000;
 
-  .iconfont{
-    font-size: 30px;
-  }
-  p{
-    margin-right:15px;
-  }
-  .top{
-    width: 230px;
-    height: 100%;
-    background: #000;
-    color: #ccc;
+  .main-one{
+    height: 150px;
+    background: hotpink;
     display: flex;
-    justify-content: center;
-    align-items: center;
 
-    .left{
-      margin-right: 10px;
-      font-weight: 900;
+    .main-one-left{
+      height: 100%;
+      width: 25%;
+      background: indianred;
     }
+    .main-one-right{
+      height: 100%;
+      width: 75%;
+      background: khaki;
+      .van-swipe-item{
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+  }
+
+  .main-two{
+    height: 50px;
+    background: lawngreen;
+  }
+  .main-three{
+    height: 100px;
+    background: #ccc;
   }
 }
 </style>
