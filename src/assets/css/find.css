@@ -1,0 +1,45 @@
+.index {
+  height: 40px;
+  background: #252823;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.index .iconfont {
+  font-size: 28px;
+  color: white;
+}
+
+.index p {
+  margin-right: 15px;
+  font-size: 18px;
+  color: white;
+}
+
+.index .top {
+  width: 230px;
+  height: 30px;
+  background: #363a34;
+  color: #777777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index .top .left {
+  margin-right: 10px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.index .top .right {
+  font-size: 14px;
+}
+
+.icon-list {
+  width: 100%;
+  height: 230px;
+  background-color: yellowgreen;
+}

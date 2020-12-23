@@ -19,6 +19,8 @@ import {
 import './assets/css/style.scss'
 // 引入移动端适配定义字体大小
 import 'amfe-flexible'
+// 发现页样式
+import './assets/css/find.scss'
 
 const app = createApp(App)
 app.use(store)
@@ -31,5 +33,4 @@ app.use(SwipeItem)
 app.use(Field)
 app.use(NavBar)
 app.use(Button)
-
 app.mount('#app')
