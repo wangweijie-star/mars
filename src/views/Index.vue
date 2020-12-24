@@ -14,10 +14,14 @@
     <div class="main-two"></div>
     <div class="main-three"></div>
   </div>
+  <!-- //首页列表 -->
+  <recom-list />
 </template>
 
 <script>
 import Heard from '../components/home/Heard'
+// 引入首页列表
+import RecomList from '../components/home/RecomList'
 import axios from 'axios'
 export default {
   data () {
@@ -26,7 +30,8 @@ export default {
     }
   },
   components: {
-    Heard
+    Heard,
+    RecomList
   },
 
   computed: {},

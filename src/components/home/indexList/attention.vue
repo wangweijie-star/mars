@@ -1,0 +1,23 @@
+<template>
+<!-- 首页关注 -->
+    <van-empty description="速速识别为mars居民才能看到你关注的消息哟" v-if="islogin">
+      <van-button plain hairline mini color='green' type="primary" to='/login'>登录</van-button>
+    </van-empty>
+</template>
+
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup () {
+    let islogin = true
+
+    if (localStorage.getItem('token')) {
+      islogin = false
+    }
+    return { islogin }
+  }
+})
+</script>
+<style lang='scss' scoped>
+</style>
