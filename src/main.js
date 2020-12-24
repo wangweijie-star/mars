@@ -13,7 +13,8 @@ import {
   NavBar,
   Button,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  Popup
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -28,18 +29,16 @@ app.use(router)
 app.use(Tabbar)
 app.use(TabbarItem)
 app.use(Search)
-<<<<<<< HEAD
 app.use(Swipe)
 app.use(SwipeItem)
 app.use(Field)
 app.use(NavBar)
 app.use(Button)
-=======
 app.use(Field)
 app.use(NavBar)
 app.use(Button)
+app.use(Popup)
 
 app.use(Swipe)
 app.use(SwipeItem)
->>>>>>> yankun
 app.mount('#app')

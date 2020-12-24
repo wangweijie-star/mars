@@ -5,11 +5,7 @@
     <div class="home">
       <keep-alive>
         <van-tabbar v-model="active" router :placeholder="true" inactive-color="#fff" active-color="green">
-<<<<<<< HEAD
-          <van-tabbar-item v-for="item in state.tabbarList" :key="item.title" :to="item.to" :replace='item.replace'>
-=======
           <van-tabbar-item v-for="item in state.tabbarList" :key="item.title" :to="item.to" >
->>>>>>> yankun
             <span>{{ item.title }}</span>
             <template #icon>
               <span class="iconfont" :class="item.icon"></span>
