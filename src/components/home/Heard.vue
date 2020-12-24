@@ -34,7 +34,7 @@ export default {
 <style lang='scss' scoped>
 .index{
   height: 44px;
-  background: hotpink;
+  // background: hotpink;
   padding: 8px 16px;
   display: flex;
   justify-content: flex-start;

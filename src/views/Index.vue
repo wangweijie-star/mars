@@ -66,29 +66,9 @@
       </div>
       <div class="main-three">
         <van-grid column-num='6' :border="false">
-          <van-grid-item>
-            <img src="../assets/imges/shouye.png" alt="">
-            <span>附近地点</span>
-          </van-grid-item>
-          <van-grid-item>
-            <img src="../assets/imges/yingshi.png" alt="">
-            <span>交赞饮食</span>
-          </van-grid-item>
-          <van-grid-item>
-            <img src="../assets/imges/mingsuo.png" alt="">
-            <span>买物名所</span>
-          </van-grid-item>
-          <van-grid-item>
-            <img src="../assets/imges/wanle.png" alt="">
-            <span>玩乐胜地</span>
-          </van-grid-item>
-          <van-grid-item>
-            <img src="../assets/imges/dangdi.png" alt="">
-            <span>当地独占</span>
-          </van-grid-item>
-          <van-grid-item>
-            <img src="../assets/imges/tiyan.png" alt="">
-            <span>优挚体验</span>
+          <van-grid-item v-for="(item, index) in mainthresslist" :key="index" @click="gotwothree(index)" >
+            <img :src="item.url" alt="">
+            <span>{{ item.title}}</span>
           </van-grid-item>
         </van-grid>
       </div>
@@ -124,7 +104,14 @@ import url2 from '../assets/imges/hot2.png'
 import url3 from '../assets/imges/hot3.png'
 import url4 from '../assets/imges/hot4.png'
 import url5 from '../assets/imges/hot5.png'
+import url6 from '../assets/imges/shouye.png'
+import url7 from '../assets/imges/yingshi.png'
+import url8 from '../assets/imges/mingsuo.png'
+import url9 from '../assets/imges/wanle.png'
+import url10 from '../assets/imges/dangdi.png'
+import url11 from '../assets/imges/tiyan.png'
 export default {
+  props: ['id'],
   data () {
     return {
       swiperOne: [],
@@ -134,7 +121,39 @@ export default {
         url3: url3,
         url4: url4,
         url5: url5
-      }
+      },
+      mainthresslist: [
+        {
+          url: url6,
+          title: '附近地点',
+          biaoti: '全部品类'
+        },
+        {
+          url: url7,
+          title: '交赞饮食',
+          biaoti: 'Eat'
+        },
+        {
+          url: url8,
+          title: '买物名所',
+          biaoti: 'Buy'
+        },
+        {
+          url: url9,
+          title: '玩乐胜地',
+          biaoti: 'Play'
+        },
+        {
+          url: url10,
+          title: '当地独占',
+          biaoti: 'Local'
+        },
+        {
+          url: url11,
+          title: '优挚体验',
+          biaoti: 'Experience'
+        }
+      ]
     }
   },
   components: {
@@ -150,6 +169,9 @@ export default {
             this.swiperOne = res.data.reslut
           }
         })
+    },
+    gotwothree (i) {
+      this.$router.push({ name: 'twothree', params: { biaoti: this.mainthresslist[i].biaoti } })
     }
   },
   mounted () {
@@ -213,7 +235,7 @@ export default {
     .main-one-right{
       height: 135px;
       width: 274px;
-      background: khaki;
+      // background: khaki;
       .van-swipe{
         width: 274px;
         height: 135px;
