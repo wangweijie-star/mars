@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 // 引入矢量图标
 import './assets/font/iconfont.css'
-// 引入want框架
+// 引入vant框架
 import {
   Tabbar,
   TabbarItem,
@@ -18,7 +18,9 @@ import {
   GridItem,
   Image as VanImage,
   Tab,
-  Tabs
+  Tabs,
+  Toast,
+  Empty
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -43,4 +45,10 @@ app.use(GridItem)
 app.use(VanImage)
 app.use(Tab)
 app.use(Tabs)
+app.use(Swipe)
+app.use(SwipeItem)
+app.use(Toast)
+app.use(Tab)
+app.use(Tabs)
+app.use(Empty)
 app.mount('#app')

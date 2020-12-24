@@ -108,11 +108,15 @@
       </div>
     </div>
   </div>
+  <!-- //首页列表 -->
+  <recom-list />
 </template>
 
 <script>
 // 引入头部组件
 import Heard from '../components/home/Heard'
+// 引入首页列表
+import RecomList from '../components/home/RecomList'
 import axios from 'axios'
 // 引入图片地址
 import url1 from '../assets/imges/hot1.png'
@@ -134,7 +138,8 @@ export default {
     }
   },
   components: {
-    Heard
+    Heard,
+    RecomList
   },
   methods: {
     getOneList () {
