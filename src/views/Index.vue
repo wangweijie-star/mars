@@ -163,6 +163,7 @@ export default {
   height: 280px;
   background: #000;
   padding: 10px;
+  margin-top: 59px;
   // overflow: hidden;
 
   .main-one{
