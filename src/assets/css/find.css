@@ -101,7 +101,6 @@ main .tabs1 .van-tabs__line {
 
 main .tabs1 .van-tab--active {
   background: #88b272 !important;
-  color: white !important;
 }
 
 main .tabs1 .van-tabs__nav {
@@ -120,4 +119,8 @@ main .tabs1 .van-tabs__nav .van-tab {
 main .tabs1 .van-tabs__nav .van-tab .van-tab__text {
   color: #88b272;
   font-size: 12px;
+}
+
+.van-tab--active .van-tab__text {
+  color: #fff !important;
 }

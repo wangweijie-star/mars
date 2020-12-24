@@ -24,8 +24,8 @@
   </div>
   <router-view />
  <van-tabs v-model="active" swipeable class="tabs1" >
-  <van-tab v-for="index in 11" :title="'选项 ' + index" :key="index" >
-    内容 {{ index }}
+  <van-tab v-for="(item,index) in tablist" :title="item.title" :key="index"  >
+    内容 {{ item.title }}
   </van-tab>
 </van-tabs>
 </main>
@@ -86,6 +86,41 @@ export default {
           icon: 'photo-o',
           text: '理容悦己',
           to: '/'
+        }
+      ],
+      tablist: [
+        {
+          title: '新晋良铺'
+        },
+        {
+          title: '附近地点'
+        },
+        {
+          title: '色彩空间'
+        },
+        {
+          title: '阳光玻璃房'
+        },
+        {
+          title: '春季好味道'
+        },
+        {
+          title: '面包会有的'
+        },
+        {
+          title: '特调鸡尾酒在这里'
+        },
+        {
+          title: '享受童趣'
+        },
+        {
+          title: '春游好去处'
+        },
+        {
+          title: '吃了会变甜'
+        },
+        {
+          title: '约会加成'
         }
       ],
       active: 2

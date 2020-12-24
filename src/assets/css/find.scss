@@ -104,8 +104,6 @@ main{
     } //.tabs1 .van-tab--active
     .van-tab--active{
       background: #88b272!important;
-      color: white!important;
-      
     }
     .van-tabs__nav{
       background-color: #ffffff;
@@ -126,4 +124,8 @@ main{
     }
     
   }
+}
+
+.van-tab--active .van-tab__text {
+  color: #fff!important;
 }
