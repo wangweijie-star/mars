@@ -42,7 +42,7 @@
         </div>
         <!-- 第二块中的第一块右边部分 -->
         <div class="main-one-right">
-          <van-swipe vertical autoplay="1000">
+          <van-swipe vertical autoplay="1000" @click="gomove">
             <van-swipe-item v-for="item in swiperOne" :key="item">
               <img :src="item" alt="">
             </van-swipe-item>
@@ -173,6 +173,9 @@ export default {
     },
     gotwothree (i) {
       this.$router.push({ name: 'twothree', params: { biaoti: this.mainthresslist[i].biaoti } })
+    },
+    gomove () {
+      document.location = 'https://market-video.img.9xiu.com/c5.mp4?id=2020052101'
     }
   },
   mounted () {

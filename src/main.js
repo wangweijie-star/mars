@@ -33,8 +33,6 @@ import {
   PullRefresh
 } from 'vant'
 
-
-
 const app = createApp(App)
 app.use(store)
 app.use(router)

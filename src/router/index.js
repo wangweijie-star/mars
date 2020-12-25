@@ -69,8 +69,11 @@ const routes = [
   {
     path: '/details.vue',
     component: () => import('../views/details.vue')
+  },
+  {
+    path: '/cities',
+    component: () => import('../views/Cities.vue')
   }
-
 ]
 
 const router = createRouter({
