@@ -65,6 +65,10 @@ const routes = [
     path: '/twothree/:biaoti',
     name: 'twothree',
     component: () => import('../views/TwoThree.vue')
+  },
+  {
+    path: '/details.vue',
+    component: () => import('../views/details.vue')
   }
 
 ]

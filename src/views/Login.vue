@@ -1,4 +1,5 @@
 <template>
+<!-- 登录页面 -->
   <van-nav-bar title="登录" left-arrow @click="left" />
   <div class="from-warp">
     <van-field v-model="text" label="用户名" />
@@ -24,7 +25,7 @@ export default defineComponent({
   },
   methods: {
     left () {
-      this.$router.back(1)
+      this.$router.go(-1)
     }
   }
 })
@@ -42,7 +43,7 @@ function submitFrom () {
         position: 'bottom'
       })
       setTimeout(() => {
-        this.$router.back(1)
+        this.$router.go(-1)
       }, 1000)
     }
   }

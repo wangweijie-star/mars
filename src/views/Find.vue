@@ -24,8 +24,8 @@
   </div>
   <router-view />
  <van-tabs v-model="active" swipeable class="tabs1" >
-  <van-tab v-for="index in 11" :title="'选项 ' + index" :key="index" >
-    内容 {{ index }}
+  <van-tab v-for="(item,index) in tablist" :title="item.title" :img="item.img" :key="index"  >
+    <img :src="item.img" />
   </van-tab>
 </van-tabs>
 </main>
@@ -86,6 +86,52 @@ export default {
           icon: 'photo-o',
           text: '理容悦己',
           to: '/'
+        }
+      ],
+      tablist: [
+        {
+          title: '新晋良铺',
+          img: require('../assets/imges/find0.jpg')
+        },
+        {
+          title: '附近地点',
+          img: require('../assets/imges/find1.jpg')
+        },
+        {
+          title: '色彩空间',
+          img: require('../assets/imges/find2.jpg')
+        },
+        {
+          title: '阳光玻璃房',
+          img: require('../assets/imges/find3.jpg')
+        },
+        {
+          title: '春季好味道',
+          img: require('../assets/imges/find4.jpg')
+        },
+        {
+          title: '面包会有的',
+          img: require('../assets/imges/find5.jpg')
+        },
+        {
+          title: '特调鸡尾酒在这里',
+          img: require('../assets/imges/find6.jpg')
+        },
+        {
+          title: '享受童趣',
+          img: require('../assets/imges/find7.jpg')
+        },
+        {
+          title: '春游好去处',
+          img: require('../assets/imges/find8.jpg')
+        },
+        {
+          title: '吃了会变甜',
+          img: require('../assets/imges/find9.jpg')
+        },
+        {
+          title: '约会加成',
+          img: require('../assets/imges/find10.jpg')
         }
       ],
       active: 2
