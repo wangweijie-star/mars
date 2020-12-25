@@ -22,7 +22,8 @@ import {
   Toast,
   Empty,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Overlay
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -55,4 +56,6 @@ app.use(Tabs)
 app.use(Empty)
 app.use(DropdownMenu)
 app.use(DropdownItem)
+app.use(Overlay)
+
 app.mount('#app')
