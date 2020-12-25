@@ -22,7 +22,10 @@ import {
   Toast,
   Empty,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Calendar,
+  Cell,
+  Icon
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -55,4 +58,7 @@ app.use(Tabs)
 app.use(Empty)
 app.use(DropdownMenu)
 app.use(DropdownItem)
+app.use(Calendar)
+app.use(Cell)
+app.use(Icon)
 app.mount('#app')
