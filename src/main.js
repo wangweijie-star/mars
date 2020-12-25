@@ -20,7 +20,8 @@ import {
   Tab,
   Tabs,
   Toast,
-  Empty
+  Empty,
+  Overlay
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -51,4 +52,6 @@ app.use(Toast)
 app.use(Tab)
 app.use(Tabs)
 app.use(Empty)
+app.use(Overlay)
+
 app.mount('#app')

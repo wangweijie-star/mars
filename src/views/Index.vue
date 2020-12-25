@@ -1,4 +1,5 @@
 <template>
+<!-- 首页 -->
   <div class="index-wrap">
     <!-- 组件插入头部 -->
     <heard />
