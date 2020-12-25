@@ -1,4 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+// 引入vant ui
+import { Toast } from 'vant'
 
 const routes = [
   {
@@ -11,7 +13,21 @@ const routes = [
       },
       {
         path: '/index',
-        component: () => import('../views/Index.vue')
+        component: () => import('../views/Index.vue'),
+        children: [
+          {
+            path: '/recommend',
+            component: () => import('../components/home/indexList/recommend')
+          },
+          {
+            path: '/attention',
+            component: () => import('../components/home/indexList/attention')
+          },
+          {
+            path: '/locality',
+            component: () => import('../components/home/indexList/locality')
+          }
+        ]
       },
       {
         path: '/find',
@@ -56,7 +72,13 @@ router.beforeEach((to, from, next) => {
     if (localStorage.token) {
       next()
     } else {
-      next('/login')
+      Toast({
+        message: '请先登录',
+        position: 'bottom'
+      })
+      setTimeout(() => {
+        next('/login')
+      }, 500)
     }
   } else {
     next()

@@ -23,8 +23,8 @@ import { ref, reactive } from 'vue'
 export default {
 
   setup () {
-    var index = ref(0)
-    const active = ref(index)
+    // var index = ref(0)
+    const active = ref(0)
     const state = reactive({
       tabbarList: [
         {
@@ -37,30 +37,33 @@ export default {
         {
           title: '发现',
           icon: 'icon-wangyuanjing',
-          to: '/find',
-          replace: true
+          to: '/find'
         },
         {
           title: '发布',
           icon: 'icon-fabu',
-          to: '/publish',
-          replace: true
+          to: '/publish'
         },
         {
           title: '消息',
           icon: 'icon-xiaoxi',
-          to: '/message',
-          replace: true
+          to: '/message'
         },
         {
           title: '我的',
           icon: 'icon-wode',
-          to: '/mine',
-          replace: true
+          to: '/mine'
         }
       ]
     })
     return { active, state }
+  },
+  mounted () {
+    this.state.tabbarList.forEach((elm, index) => {
+      if (this.$route.path === elm.to) {
+        this.active = index
+      }
+    })
   }
 }
 </script>
