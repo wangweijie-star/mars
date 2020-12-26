@@ -61,7 +61,6 @@
 main {
   background-color: #556f48;
   width: 100%;
-  height: 900px;
   z-index: 0;
 }
 
@@ -114,7 +113,7 @@ main .tabs1 .van-tabs__nav {
 }
 
 main .tabs1 .van-tabs__nav .van-tab {
-  background-color: #f6f6f6;
+  background-color: #E2E2E2;
   margin: 0 6px;
   border-radius: 5px;
   height: 30px;
@@ -140,4 +139,71 @@ main .tabs1 .van-tabs__nav .van-tab .van-tab__text {
   height: 353px;
   margin: 0 auto;
   box-shadow: #cecece 0px 5px 3px 1px;
+}
+
+.flush {
+  background-color: #556f48;
+}
+
+.flush .van-pull-refresh__head {
+  color: #fff !important;
+}
+
+.flush .van-loading--circular {
+  color: #fff !important;
+}
+
+.product {
+  background: #F6F6F6;
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  list-style: none;
+}
+
+.product .ETP-img {
+  width: 327px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 9.06px 9.06px 9.06px;
+}
+
+.product .ETP-img ul {
+  width: 327px;
+}
+
+.product .ETP-img ul li {
+  width: 100%;
+}
+
+.product .ETP-img ul img {
+  width: 100%;
+}
+
+.product-title {
+  height: 35px;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.product-title span {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 9px;
+}
+
+.product-title .more {
+  color: black;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.product-title .more .skip {
+  font-size: 16px;
+  padding: 0 12px 0 0;
+  color: #b3b3b3;
 }
