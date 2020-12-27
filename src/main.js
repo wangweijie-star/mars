@@ -33,10 +33,9 @@ import {
   Cell,
   Icon,
   Overlay,
-  PullRefresh
+  PullRefresh,
+  TreeSelect
 } from 'vant'
-
-
 
 const app = createApp(App)
 app.use(store)
@@ -67,4 +66,5 @@ app.use(Cell)
 app.use(Icon)
 app.use(Overlay)
 app.use(PullRefresh)
+app.use(TreeSelect)
 app.mount('#app')

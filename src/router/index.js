@@ -34,11 +34,6 @@ const routes = [
         component: () => import('../views/Find.vue')
       },
       {
-        path: '/more',
-        component: () => import('../views/more.vue')
-      },
-
-      {
         path: '/publish',
         component: () => import('../views/Publish.vue')
       },
@@ -57,6 +52,18 @@ const routes = [
     ]
   },
   {
+    path: '/more',
+    component: () => import('../views/More.vue')
+  },
+  {
+    path: '/moretwo',
+    component: () => import('../views/MoreTwo.vue')
+  },
+  {
+    path: '/morethree',
+    component: () => import('../views/MoreThree.vue')
+  },
+  {
     path: '/login',
     component: () => import('../views/Login.vue')
   },
@@ -67,7 +74,7 @@ const routes = [
     component: () => import('../views/TwoThree.vue')
   },
   {
-    path: '/details.vue',
+    path: '/details/:id',
     component: () => import('../views/details.vue')
   }
 
