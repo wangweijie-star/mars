@@ -53,7 +53,8 @@ const routes = [
   },
   {
     path: '/more',
-    component: () => import('../views/More.vue')
+    component: () => import('../views/More.vue'),
+    children: []
   },
   {
     path: '/moretwo',
@@ -64,6 +65,10 @@ const routes = [
     component: () => import('../views/MoreThree.vue')
   },
   {
+    path: '/details/:id',
+    component: () => import('../views/details.vue')
+  },
+  {
     path: '/login',
     component: () => import('../views/Login.vue')
   },
@@ -72,10 +77,6 @@ const routes = [
     path: '/twothree/:biaoti',
     name: 'twothree',
     component: () => import('../views/TwoThree.vue')
-  },
-  {
-    path: '/details/:id',
-    component: () => import('../views/details.vue')
   }
 
 ]

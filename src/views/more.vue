@@ -19,43 +19,17 @@
       </van-dropdown-item>
       <van-dropdown-item v-model="state.value3" :options="option3" />
     </van-dropdown-menu>
-    <div class="title">
-      <ul>
-        <router-link v-for="(item, index) in option4"
-          :key="item"
-          :class="{active: index === number}"
-          @click="change(index)"
-          :to="item.url"
-        >
-          {{ item.text }}
-        </router-link>
-      </ul>
-    </div>
+    <more-title></more-title>
   </div>
-  <div class="contenr" v-if="isLoad">
-  <!-- <p>{{listabc}}</p> -->
-  <!-- 日历不要了 -->
-    <!-- <van-tabs v-model="active" swipeable class="tabs1" >
-      <van-tab v-for="(item,index) in tablist" :title="item.title" :img="item.img" :key="index"  >
-        <img :src="item.img" />
-      </van-tab>
-    </van-tabs> -->
-    <div v-for="(item,index) in listabc" class="inner-list" :key="index" @click="todetail(index)">
-      <img :src="item.image" alt="" />
-      <div class="inner-list-msg">
-        <b>{{ item.title }}</b>
-        <span class="inner-list-msg-authods">{{ item.address }}</span>
-        <span class="inner-list-msg-date">{{ item.intro }}</span>
-      </div>
-    </div>
-  </div>
-
+  <more-page></more-page>
+  <!-- <router-view></router-view> -->
 </div>
 </template>
 
 <script>
-import { getMoreApi } from '../utils/api'
 import { reactive } from 'vue'
+import MorePage from '../components/home/morePage/MorePage'
+import MoreTitle from '../components/home/morePage/MoreTitle'
 export default {
   setup() {
     const isLoad = false
@@ -88,11 +62,6 @@ export default {
       { text: '离我最近', value: 'C' },
       { text: '评分最高', value: 'D' },
       { text: '人均最高', value: 'E' }
-    ]
-    const option4 = [
-      { text: '曲项向天歌', url: '/more' },
-      { text: '白毛浮绿水', url: '/moretwo' },
-      { text: '红掌拨清波', url: '/morethree' }
     ]
     const items = [
       {
@@ -159,7 +128,6 @@ export default {
       option1,
       // option2,
       option3,
-      option4,
       isLoad,
       number,
       items,
@@ -176,18 +144,11 @@ export default {
     },
     todetail(index) {
       this.$router.push(`/details/${index + 1}`)
-    },
-    change(i) {
-      this.number = i
-      this.$forceUpdate()
     }
   },
-  mounted() {
-    getMoreApi().then(res => {
-      this.listabc = res.result
-      this.isLoad = true
-      this.$forceUpdate()
-    })
+  components: {
+    MorePage,
+    MoreTitle
   }
 }
 </script>
@@ -197,28 +158,6 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  .title {
-    height: 70px;
-    background: #556F48;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    ul {
-      margin-top: -10px;
-      display: flex;
-      justify-content: space-evenly;
-
-      a {
-        background: #88B272;
-        font-size: 16px;
-        color: #F6F6F6;
-        width: 85px;
-        height: 31px;
-        border-radius: 4px;
-        line-height: 31px;
-      }
-    }
-  }
 }
 .active {
   background: #F6F6F6 !important;

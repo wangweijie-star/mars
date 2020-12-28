@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { getMoreApi } from '../../../utils/api'
 export default {
   data() {
     return {
@@ -30,18 +29,12 @@ export default {
     todetail(index) {
       this.$router.push(`/details/${index + 1}`)
     }
-  },
-  mounted() {
-    getMoreApi().then(res => {
-      this.listabc = res.result
-      this.isLoad = true
-      this.$forceUpdate()
-    })
   }
 }
 </script>
 
 <style lang='scss' scoped>
+
 .inner-list {
   margin: 10px 20px 0 20px;
   background: #fff;
