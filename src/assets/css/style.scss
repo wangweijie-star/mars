@@ -17,3 +17,116 @@
     }
   }
 }
+// 首页第一个轮播图
+.main-one-right{
+  position: relative;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+  .van-swipe__indicators{
+    position: absolute;
+    left: 265px;
+    top: 70px;
+    .van-swipe__indicator{
+      width: 4px;
+      height: 4px;
+    }
+  }
+}
+// 第二块左边第一个轮播图温度
+.main-one-left-div:nth-child(3){
+  .van-swipe{
+    width: 54px;
+    height: 19px;
+    .van-swipe__track{
+      width: 54px!important;
+      height: 19px;
+    }
+    .van-swipe-item{
+      width: 54px!important;
+      height: 19px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 19px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+// 第二块左边第二个轮播图
+.main-one-left-div:nth-child(4){
+  .van-swipe{
+    width: 74px;
+    height: 19px;
+    .van-swipe__track{
+      width: 74px!important;
+      height: 19px;
+    }
+    .van-swipe-item{
+      width: 74px!important;
+      height: 19px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 19px;
+      display: flex;
+      p{
+        background-color: rgba(255, 255, 255, 0.2);
+      };
+    }
+  }
+}
+// 第二快的第二块轮播图
+.main-two{
+  .van-swipe{
+    width: 100%;
+    height: 20px;
+    .van-swipe__track{
+      width: 100%!important;
+      height: 20px!important;
+    }
+    .van-swipe-item{
+      width: 100%!important;
+      height: 20px;
+      color: #fff;
+      display: flex;
+      .kuang{
+        // width: 56px;
+        height: 18px;
+        font-size: 12px;
+        border-radius: 2px;
+        text-align: center;
+        line-height: 18px;
+        border: 1px solid #E2E2E2;
+        margin-left: 10px;
+      }
+      .right{
+        font-size: 14px;
+        width: 256px;
+        height: 20px;
+        line-height: 20px;
+        font-weight: 400;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+// 第二块的第三块样式
+.main-three{
+  .van-grid{
+    width: 426px;
+  }
+  .van-grid-item__content{
+    background: #ccc;
+    img{
+      width: 32px;
+      height: 32px;
+    }
+    span{
+      font-size: 12px;
+      width: 48px;
+      height: 18px;
+      margin-top: 5px;
+      color: #fff;
+    }
+  }
+}
