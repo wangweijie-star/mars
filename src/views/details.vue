@@ -64,6 +64,7 @@
 </template>
 
 <script>
+import { getDetailApi } from '../utils/api'
 export default {
   data () {
     return {
@@ -78,8 +79,10 @@ export default {
   },
   mounted() {
     // 取下ID根据ID请求数据，放在listDetail中,应该还需要传一个二级路由名，好让三个页面对应的数据不相互影响
-    this.id = location.href.split('/').pop()
-    console.log(this.id)
+    this.text = location.href.split('/').pop()
+    getDetailApi({ id: location.href.split('/').pop() }).then(res => {
+      this.$forceUpdate()
+    })
   }
 }
 </script>

@@ -7,3 +7,5 @@ export const getLiApi = params => http.get('api/home/message', params)
 export const getMoreApi = params => http.get('api/home/moretops', params)
 // 更多页数据新（还未上传服务器,需通过点击nav传给后端一个id，后端通过id返回对应的数据）
 export const getMorePageApi = params => http.get('api/home/morepages', params)
+// 详情页数据
+export const getDetailApi = params => http.get('api/home/detail', params)
