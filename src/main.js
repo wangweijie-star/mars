@@ -21,7 +21,8 @@ import {
   Tabs,
   Toast,
   Empty,
-  Overlay
+  Overlay,
+  PullRefresh
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -53,5 +54,6 @@ app.use(Tab)
 app.use(Tabs)
 app.use(Empty)
 app.use(Overlay)
+app.use(PullRefresh)
 
 app.mount('#app')

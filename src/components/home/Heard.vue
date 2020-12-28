@@ -6,7 +6,14 @@
     <span class="left">mars   |</span>
     <span class="right">生活美食记录</span>
   </div>
-  <span class="iconfont icon-sangedian"></span>
+  <span class="iconfont icon-sangedian" @click="control"></span>
+</div>
+<div class="toShop" v-if="DivShow">
+  <ul>
+    <li v-for="(elm,index) in LiItem" :key="index">
+      <p>{{ elm }}</p>
+    </li>
+  </ul>
 </div>
 </template>
 
@@ -14,15 +21,20 @@
 
 export default {
   data () {
-    return {}
+    return {
+      DivShow: false,
+      LiItem: ['mars posints', '我的礼卷', '推荐地点', '提交活动', '邀请好友', '规划玩乐路线', 'mars 便利店']
+    }
   },
-  components: {},
-
-  computed: {},
-
-  watch: {},
-
-  methods: {},
+  methods: {
+    control () {
+      if (!this.DivShow) {
+        this.DivShow = true
+      } else {
+        this.DivShow = false
+      }
+    }
+  },
 
   created () {},
 
@@ -34,11 +46,12 @@ export default {
 <style lang='scss' scoped>
 .index{
   height: 44px;
-  background: hotpink;
+  background: #ffffff;
   padding: 8px 16px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  // position: relative;
 
   .iconfont{
     width: 24px;
@@ -71,6 +84,24 @@ export default {
     width: 24px;
     height: 24px;
     margin-left: 15px;
+  }
+}
+.toShop{
+  width: 100px;
+  position: fixed;
+  top: 65px;
+  right: 0;
+  z-index: 100;
+  background: #556F48;
+  border-radius:10px 0 0 0px ;
+  li{
+    height: 35px;
+    border-bottom:1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #ffffff;
   }
 }
 </style>

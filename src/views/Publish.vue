@@ -1,7 +1,7 @@
 <template>
   <van-overlay :show="show">
     <div class="wrapper" @click.stop>
-      <div class="block" />
+        <img src="https://img.yzcdn.cn/vant/doge-fire.jpg" alt="">
     </div>
   </van-overlay>
 
@@ -14,19 +14,7 @@ export default {
     return {
       show: true
     }
-  },
-  components: {},
-
-  computed: {},
-
-  watch: {},
-
-  methods: {},
-
-  created () {},
-
-  mounted () {}
-
+  }
 }
 </script>
 
@@ -37,10 +25,11 @@ export default {
     justify-content: center;
     height: 100%;
   }
-
-  .block {
-    width: 120px;
-    height: 120px;
-    background-color: #fff;
+  .van-overlay{
+    background-color: rgba(3, 41, 28, 0.4);
   }
+  img {
+    width: 240px;
+  }
+
 </style>

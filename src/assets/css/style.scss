@@ -116,7 +116,7 @@
     width: 426px;
   }
   .van-grid-item__content{
-    background: #ccc;
+      background: rgba(255,255,255,.2);
     img{
       width: 32px;
       height: 32px;
@@ -129,4 +129,8 @@
       color: #fff;
     }
   }
+}
+// 首页index 粘性定位的位置
+.van-sticky--fixed{
+  top: 66px;
 }
