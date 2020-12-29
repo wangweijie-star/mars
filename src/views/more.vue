@@ -16,11 +16,14 @@ export default {
 
   watch: {},
 
-  methods: {},
+  methods: {
+  },
 
-  created () {},
+  created () {
+  },
 
-  mounted () {}
+  mounted () {
+  }
 
 }
 </script>

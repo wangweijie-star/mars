@@ -49,22 +49,27 @@
 
   <!-- mars专题 -->
   <div class="mars">
-    <span>mars专题</span>
-    <div class="mars-list"  v-for="(item,index) in marslist.slice(0,12)" :title="item.title" :img="item.img" :text="item.text" :text2="item.text2"  :key='index'>
-      <img :src="item.img" alt="">
+      <span class="top-title">mars 专题</span>
+    <div class="mars-list"  v-for="(item,index) in  marslist" :title="item.title" :img="item.img" :text="item.text" :text1="item.text1" :key='index'>
       <div class="bgcolor">
-        <span>{{item.title}}</span>
+        <img :src="item.img" alt="">
+        <span class="img-titel">{{item.title}}</span>
       </div>
-      <span>{{item.text}}</span>
-      <span>{{item.text2}}</span>
+        <span class="text">{{item.text}}</span>
+        <span class="text">{{item.text1}}</span>
     </div>
   </div>
+
 </main>
 </van-pull-refresh>
 </div>
 </template>
 
 <script>
+// import { Form } from 'vant'
+
+// import axios from 'axios'
+import { marslistApi } from '../utils/api'
 
 export default {
   data () {
@@ -211,31 +216,12 @@ export default {
           }
         ]
       },
-      marslist: [
-        {
-          img: require('../assets/mars/car.png'),
-          title: '广汽丰田 C-HR x mars 与北广深城市',
-          text: '· Vogue Business 评选出中国 新时尚',
-          text2: '除了K11的尼尔·贝卢法个展，十二月'
-        },
-        {
-          img: require('../assets/mars/bar.png'),
-          title: '到胶片摄影师开的复古咖啡店里，一品',
-          text: '· 体育西网红社区里的安静小店，只专注',
-          text2: '这间法餐与成都本地味道融合的 bistrc'
-        }
-      ],
+      marslist: [],
       active: 2,
       count: 0,
       isLoading: false
     }
   },
-  components: {},
-
-  computed: {},
-
-  watch: {},
-
   methods: {
     // span跳转
     hrefmore () {
@@ -247,10 +233,10 @@ export default {
       }, 1000)
     }
   },
-
-  created () {},
-
-  mounted () {}
+  async mounted () {
+    const res = await marslistApi()
+    this.marslist = res.result
+  }
 
 }
 </script>
