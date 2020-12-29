@@ -39,6 +39,9 @@ export default {
       if (idx === 5) {
         this.$router.push('/ToProject')
       }
+      if (idx === 6) {
+        this.$router.push('/constore')
+      }
     }
   },
 

@@ -56,18 +56,26 @@ const routes = [
       }
     ]
   },
+  // 登录页
   {
     path: '/login',
     component: () => import('../views/Login.vue')
   },
+  // 详情页
   {
     path: '/details',
     component: () => import('../views/details.vue')
   },
+  // 规划路线页
   {
     path: '/ToProject',
     component: () => import('../views/index/ToProject.vue'),
     meta: { requiresAuth: true }
+  },
+  // 便利店组件
+  {
+    path: '/constore',
+    component: () => import('../views/constore.vue')
   }
 
 ]
