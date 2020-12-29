@@ -4,6 +4,12 @@ import router from './router'
 import store from './store'
 // 引入矢量图标
 import './assets/font/iconfont.css'
+// 引入全局样式
+import './assets/css/style.scss'
+// 发现页样式
+import './assets/css/find.scss'
+// 引入移动端适配定义字体大小
+import 'amfe-flexible'
 // 引入vant框架
 import {
   Tabbar,
@@ -24,14 +30,12 @@ import {
   Empty,
   Cell,
   CellGroup,
-  ShareSheet
+  ShareSheet,
+  DropdownMenu,
+  DropdownItem,
+  Overlay,
+  PullRefresh
 } from 'vant'
-// 引入全局样式
-import './assets/css/style.scss'
-// 引入移动端适配定义字体大小
-import 'amfe-flexible'
-// 发现页样式
-import './assets/css/find.scss'
 
 const app = createApp(App)
 app.use(store)
@@ -62,4 +66,8 @@ app.use(Toast)
 app.use(Empty)
 app.use(Cell)
 app.use(ShareSheet)
+app.use(DropdownMenu)
+app.use(DropdownItem)
+app.use(Overlay)
+app.use(PullRefresh)
 app.mount('#app')

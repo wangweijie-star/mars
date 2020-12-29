@@ -1,7 +1,7 @@
 <template>
 <div class="index">
   <span class="iconfont icon-didian1"></span>
-  <p>杭州</p>
+  <p @click="gocities">{{ city.name }}</p>
   <div class="top">
     <span class="left">mars   |</span>
     <span class="right">生活美食记录</span>
@@ -11,30 +11,25 @@
 </template>
 
 <script>
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapState } = createNamespacedHelpers('moduleCity')
 export default {
   data () {
     return {}
   },
-  components: {},
-
-  computed: {},
-
-  watch: {},
-
-  methods: {},
-
-  created () {},
-
-  mounted () {}
-
+  methods: {
+    gocities () {
+      this.$router.push('/cities')
+    }
+  },
+  computed: mapState(['city'])
 }
 </script>
 
 <style lang='scss' scoped>
 .index{
   height: 44px;
-  background: hotpink;
+  // background: hotpink;
   padding: 8px 16px;
   display: flex;
   justify-content: flex-start;
@@ -46,6 +41,9 @@ export default {
     font-size: 28px;
   }
   p{
+    // width: 36px;
+    height: 27px;
+    line-height: 27px;
     margin-right:10px;
     margin-left: 4px;
     font-size: 18px;
@@ -70,6 +68,7 @@ export default {
   .icon-sangedian{
     width: 24px;
     height: 24px;
+    padding: 0;
     margin-left: 15px;
   }
 }

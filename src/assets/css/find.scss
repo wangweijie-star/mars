@@ -17,6 +17,9 @@
     color: black;
     
   }
+  .icon-sangedian{
+    padding-left: 8px;
+  }
   p{
     margin-right:15px;
     font-size: 18px;
@@ -59,7 +62,6 @@
 main{
   background-color:#556f48;
   width: 100%;
-  height: 900px;
   z-index: 0;
 .black{
   width: 100%;
@@ -102,15 +104,13 @@ main{
     } //.tabs1 .van-tab--active
     .van-tab--active{
       background: #88b272!important;
-      color: white!important;
-      
     }
     .van-tabs__nav{
       background-color: #ffffff;
       padding: 0px;
       padding-top: 2px;
       .van-tab{
-        background-color:#f6f6f6;
+        background-color:#E2E2E2;
         margin: 0 6px;
         border-radius: 5px; 
         height: 30px;
@@ -125,3 +125,89 @@ main{
     
   }
 }
+
+.van-tab--active .van-tab__text {
+  color: #fff!important;
+}
+
+.van-tab__pane{
+  background-color: #ffffff;
+  padding: 0 8px;
+  padding-bottom: 4px;
+  
+  img{
+    width: 100%;
+    height: 353px;
+    margin: 0 auto;
+    box-shadow:#cecece 0px 5px 3px 1px;
+  }
+}
+
+.flush{
+  background-color: rgb(85, 111, 72);
+  .van-pull-refresh__head{
+    color: #fff!important;
+  }
+
+  .van-loading--circular{
+    color: #fff!important;
+  }
+}
+
+// 近期活动
+.product{
+background: #F6F6F6;
+  // margin-top: 10px;
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  list-style: none;
+  
+  .ETP-img{
+    width:327px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 9.06px 9.06px 9.06px;
+    ul{
+      width: 327px;
+      
+      li{
+        width: 100%;
+        
+      }
+        img{
+          width: 100%;
+        }
+    }
+  }
+
+}
+.product-title{
+  height: 35px;
+  background-color:rgb(246, 246, 246);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+  span{
+    color:black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 9px;
+  }
+  .more{
+    color: black;
+    font-size: 12px;
+    font-weight: 800;
+    // padding-right: 6px;
+
+    .skip{
+      font-size: 16px;
+      padding: 0 12px 0 0;
+      color: #b3b3b3;
+    }
+  }
+}
+
+// mars专题

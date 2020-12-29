@@ -10,14 +10,15 @@
 </div>
 <div class="section">
   <div class="head-photo">
+    <img :src="info.img" alt="">
   </div>
-  <h2>aaaaa</h2>
+  <h2>{{info.name}}</h2>
   <div class="top-text"><span>1关注</span><span class="fen">0粉丝</span></div>
   <van-tabs v-model="active" >
-    <van-tab title="mars 城事" style="{background:'#556F48'}"><img src="http://42.192.148.146:3000/images/mine/img2.png" alt=""></van-tab>
-    <van-tab title="mark"><img src="http://42.192.148.146:3000/images/mine/img1.png" alt=""></van-tab>
-    <van-tab title="路线"><img src="http://42.192.148.146:3000/images/mine/img3.png" alt=""></van-tab>
-    <van-tab title="签到"><img src="http://42.192.148.146:3000/images/mine/img2.png" alt=""></van-tab>
+    <van-tab title="mars 城事" style="{background:'#556F48'}"><img src="http://42.192.148.146:1111/images/mine/img2.png" alt=""></van-tab>
+    <van-tab title="mark"><img src="http://42.192.148.146:1111/images/mine/img1.png" alt=""></van-tab>
+    <van-tab title="路线"><img src="http://42.192.148.146:1111/images/mine/img3.png" alt=""></van-tab>
+    <van-tab title="签到"><img src="http://42.192.148.146:1111/images/mine/img2.png" alt=""></van-tab>
   </van-tabs>
   <van-share-sheet
   v-model:show="showShare"
@@ -32,11 +33,12 @@
 <script>
 import { ref } from 'vue'
 import { Toast } from 'vant'
-import {userinfoApi} from '../utils/api'
+import { userinfoApi } from '../utils/api'
 export default {
   data () {
     return {
-      active: 2
+      active: 2,
+      info: {}
     }
   },
   components: {},
@@ -45,12 +47,20 @@ export default {
 
   watch: {},
 
-  methods: {},
+  methods: {
+    async getMyInforApi () {
+      const res = await userinfoApi({
+        token: localStorage.getItem('token')
+      })
+      this.info = res.result
+      console.log(res.result)
+    }
+  },
 
   created () {},
 
   mounted () {
-    
+    this.getMyInforApi()
   },
   setup () {
     const show = ref(false)
@@ -96,7 +106,7 @@ export default {
 .top{
   height: 180px;
   background-color: black;
-  background-image:url(http://42.192.148.146:3000/images/mine/img4.png);
+  background-image:url(http://42.192.148.146:1111/images/mine/img4.png);
   .van-nav-bar{
     background:rgba($color: #000000, $alpha: 0.5);
     border-bottom: 0px;
