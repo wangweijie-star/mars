@@ -8,13 +8,14 @@
   </div>
   <span class="iconfont icon-sangedian" @click="control"></span>
 </div>
-<div class="toShop" v-if="DivShow">
-  <ul>
-    <li v-for="(elm,index) in LiItem" :key="index">
-      <p>{{ elm }}</p>
-    </li>
-  </ul>
-</div>
+<!-- 点击头部显示隐藏Div -->
+  <div class="toShop" v-if="DivShow">
+    <ul>
+      <li v-for="(elm,index) in LiItem" :key="index" @click="ToProject(index)">
+        <p>{{ elm }}</p>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -32,6 +33,11 @@ export default {
         this.DivShow = true
       } else {
         this.DivShow = false
+      }
+    },
+    ToProject (idx) {
+      if (idx === 5) {
+        this.$router.push('/ToProject')
       }
     }
   },
@@ -51,7 +57,6 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  // position: relative;
 
   .iconfont{
     width: 24px;
@@ -90,7 +95,7 @@ export default {
   width: 100px;
   position: fixed;
   top: 65px;
-  right: 0;
+  right: 3px;
   z-index: 100;
   background: #556F48;
   border-radius:10px 0 0 0px ;

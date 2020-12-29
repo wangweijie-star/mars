@@ -163,7 +163,7 @@ export default {
 <style lang='scss' scoped>
 @import "../assets/css/var.scss";
 .index-wrap{
-  background: #556F48;
+  background-color: #556F48;
 }
 .main{
   height: 280px;

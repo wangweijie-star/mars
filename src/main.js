@@ -22,7 +22,9 @@ import {
   Toast,
   Empty,
   Overlay,
-  PullRefresh
+  PullRefresh,
+  Collapse,
+  CollapseItem
 } from 'vant'
 // 引入全局样式
 import './assets/css/style.scss'
@@ -55,5 +57,7 @@ app.use(Tabs)
 app.use(Empty)
 app.use(Overlay)
 app.use(PullRefresh)
+app.use(Collapse)
+app.use(CollapseItem)
 
 app.mount('#app')

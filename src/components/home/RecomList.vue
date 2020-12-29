@@ -1,6 +1,6 @@
 <template>
 <!-- 这是首页下面的列表 -->
-<van-tabs v-model:active="active"
+  <van-tabs v-model:active="active"
   animated
   sticky
   color='green'

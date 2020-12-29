@@ -45,7 +45,6 @@ export default {
   },
   async mounted () {
     const res = await getRecommendApi()
-    console.log(res)
     this.recommendLi = res.result
   }
 }

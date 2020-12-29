@@ -61,8 +61,13 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/details.vue',
+    path: '/details',
     component: () => import('../views/details.vue')
+  },
+  {
+    path: '/ToProject',
+    component: () => import('../views/index/ToProject.vue'),
+    meta: { requiresAuth: true }
   }
 
 ]
