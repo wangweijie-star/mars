@@ -40,7 +40,7 @@
         <img :src="item.img" />
       </van-tab>
     </van-tabs> -->
-    <div v-for="(item,index) in listabc.result" class="inner-list" :key="index" @click="todetail(item.detailID)">
+    <div v-for="(item,index) in listabc" class="inner-list" :key="index" @click="todetail(item.detailID)">
       <img :src="item.image" alt="" />
       <div class="inner-list-msg">
         <b>{{ item.title }}</b>
@@ -181,7 +181,7 @@ export default {
     async getlist(idnum) {
       const res = await getMorePageApi(
         { id: idnum })
-      this.listabc = res.result
+      this.listabc = res.result.result
       this.isLoad = true
       this.$forceUpdate()
     },
@@ -194,7 +194,7 @@ export default {
   },
   mounted() {
     getMorePageApi({ id: 1 }).then(res => {
-      this.listabc = res.result
+      this.listabc = res.result.result
       this.isLoad = true
       this.$forceUpdate()
     })
