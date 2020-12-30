@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 // 引入vant ui
 import { Toast } from 'vant'
 
@@ -34,11 +34,6 @@ const routes = [
         component: () => import('../views/Find.vue')
       },
       {
-        path: '/more',
-        component: () => import('../views/more.vue')
-      },
-
-      {
         path: '/publish',
         component: () => import('../views/Publish.vue')
       },
@@ -57,6 +52,15 @@ const routes = [
     ]
   },
   // 登录页
+  {
+    path: '/more',
+    component: () => import('../views/More.vue'),
+    children: []
+  },
+  {
+    path: '/details/:id',
+    component: () => import('../views/details.vue')
+  },
   {
     path: '/login',
     component: () => import('../views/Login.vue')
@@ -100,7 +104,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 router.beforeEach((to, from, next) => {

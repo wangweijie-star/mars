@@ -29,12 +29,16 @@ import {
   Empty,
   DropdownMenu,
   DropdownItem,
+  Calendar,
+  Cell,
+  Icon,
   Overlay,
   PullRefresh,
   Overlay,
   PullRefresh,
   Collapse,
-  CollapseItem
+  CollapseItem,
+  TreeSelect
 } from 'vant'
 
 const app = createApp(App)
@@ -61,9 +65,13 @@ app.use(Tabs)
 app.use(Empty)
 app.use(DropdownMenu)
 app.use(DropdownItem)
+app.use(Calendar)
+app.use(Cell)
+app.use(Icon)
 app.use(Overlay)
 app.use(PullRefresh)
 app.use(Collapse)
 app.use(CollapseItem)
 
+app.use(TreeSelect)
 app.mount('#app')
