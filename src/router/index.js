@@ -100,6 +100,10 @@ const routes = [
   {
     path: '/commdetails/:id',
     component: () => import('../views/commDetails.vue')
+  },
+  {
+    path: '/material',
+    component: () => import('../views/Material.vue')
   }
 ]
 

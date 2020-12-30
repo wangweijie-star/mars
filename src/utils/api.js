@@ -27,3 +27,4 @@ export const marslistApi = params => http.get('/api/home/subject', params)
 export const getLiApi = params => http.get('api/home/message', params)
 
 export const lifelistApi = params => http.get('/api/home/life', params)
+export const getMaterialApi = params => http.post('api/home/materi', params)
