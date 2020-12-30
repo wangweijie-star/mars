@@ -19,28 +19,54 @@
       </van-dropdown-item>
       <van-dropdown-item v-model="state.value3" :options="option3" />
     </van-dropdown-menu>
+    <div class="title">
+      <ul>
+        <a v-for="(item, index) in option4"
+          :key="item"
+          :class="{active: index === number}"
+          @click="change(index)"
+        >
+          {{ item.text }}
+        </a>
+      </ul>
+    </div>
   </div>
-  <keep-alive>
-    <more-show></more-show>
-  </keep-alive>
+  <div class="contenr" v-if="isLoad">
+  <!-- <p>{{listabc}}</p> -->
+  <!-- 日历不要了 -->
+    <!-- <van-tabs v-model="active" swipeable class="tabs1" >
+      <van-tab v-for="(item,index) in tablist" :title="item.title" :img="item.img" :key="index"  >
+        <img :src="item.img" />
+      </van-tab>
+    </van-tabs> -->
+    <div v-for="(item,index) in listabc" class="inner-list" :key="index" @click="todetail(item.detailID)">
+      <img :src="item.image" alt="" />
+      <div class="inner-list-msg">
+        <b>{{ item.title }}</b>
+        <span class="inner-list-msg-authods">{{ item.address }}</span>
+        <span class="inner-list-msg-date">{{ item.intro }}</span>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
 <script>
-import MoreShow from '../components/home/morePage/MoreShow'
-// import { getMorePageApi } from '../utils/api'
-// import { getDetailApi } from '../utils/api'
+// import MoreShow from '../components/home/morePage/MoreShow'
+import { getMorePageApi } from '../utils/api'
 import { reactive } from 'vue'
 export default {
   setup() {
+    const isLoad = false
     const number = 0
     const state = reactive({
       activeId: 1,
       activeIndex: 0,
       value1: 0,
       value2: 'a',
-      // defaut: 'a',
-      value3: 'A'
+      defaut: 'a',
+      value3: 'A',
+      listabc: []
     })
     const option1 = [
       { text: '全部商圈', value: 0 },
@@ -61,6 +87,11 @@ export default {
       { text: '离我最近', value: 'C' },
       { text: '评分最高', value: 'D' },
       { text: '人均最高', value: 'E' }
+    ]
+    const option4 = [
+      { text: '曲项向天歌' },
+      { text: '白毛浮绿水' },
+      { text: '红掌拨清波' }
     ]
     const items = [
       {
@@ -128,16 +159,38 @@ export default {
       option3,
       number,
       items,
+      option4,
+      isLoad,
       defaut
     }
   },
   methods: {
     onClickLeft() {
       this.$router.go(-1)
+    },
+    todetail(index) {
+      this.$router.push(`/details/${index}`)
+    },
+    async getlist(idnum) {
+      const res = await getMorePageApi(
+        { id: idnum })
+      this.listabc = res.result.result
+      this.isLoad = true
+      this.$forceUpdate()
+    },
+    change(i) {
+      // 点击之后再次请求数据，传id和name
+      this.number = i
+      this.getlist(i + 1)
+      this.$forceUpdate()
     }
   },
-  components: {
-    MoreShow
+  mounted() {
+    getMorePageApi({ id: 1 }).then(res => {
+      this.listabc = res.result.result
+      this.isLoad = true
+      this.$forceUpdate()
+    })
   }
 }
 </script>
