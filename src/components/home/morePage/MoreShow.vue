@@ -89,6 +89,7 @@ export default {
   justify-content: center;
   position: fixed;
   top: 92px;
+  z-index: 0;
   ul {
     margin-top: -10px;
     display: flex;
@@ -112,6 +113,7 @@ export default {
 .contenr {
   margin-top: 163px;
   background: #556F48;
+  z-index: 0;
 }
 .inner-list {
   margin: 10px 20px 0 20px;
