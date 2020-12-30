@@ -44,7 +44,6 @@ export default {
         this.$router.push('/constore')
       }
     },
-
     gocities () {
       this.$router.push('/cities')
     }
