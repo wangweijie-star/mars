@@ -1,41 +1,42 @@
 <template>
 <!-- 信息页面 -->
-<div class="warp">
-  <van-nav-bar title="信息" />
-  <div class="mescontent">
-    <!-- <img src="../assets/imges/message-1.png" alt=""> -->
-    <ul>
-      <li>
-        <img src="../assets/imges/message-1.png" alt="">
-        <span>赞 & mark</span>
-      </li>
-      <li>
-        <img src="../assets/imges/message-2.png" alt="">
-        <span>新增关注</span>
-      </li>
-      <li>
-        <img src="../assets/imges/message-3.png" alt="">
-        <span>评论 & @</span>
-      </li>
-    </ul>
-  </div>
-  <div class="message">
-    <ul>
-      <li v-for="item in shuju" :key="item._id">
-        <div class="img-warp"></div>
-        <div class="message-text">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
-        </div>
-        <div class="shijian">
-          <p>{{ shijianchuo }}</p>
-          <p class="advance">></p>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-</div>
+<van-nav-bar title="信息" />
+<van-pull-refresh style="min-height: 100vh;" v-model="isLoading" :head-height="100" @refresh="onRefresh" loosing-text='加载中...' success-text='刷新成功😊' >
+  <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
+    <div class="warp">
+      <div class="mescontent">
+        <ul>
+          <li>
+            <img src="../assets/imges/message-1.png" alt="">
+            <span>赞 & mark</span>
+          </li>
+          <li>
+            <img src="../assets/imges/message-2.png" alt="">
+            <span>新增关注</span>
+          </li>
+          <li>
+            <img src="../assets/imges/message-3.png" alt="">
+            <span>评论 & @</span>
+          </li>
+        </ul>
+      </div>
+      <div class="message">
+        <ul>
+          <li v-for="item in shuju" :key="item._id">
+            <div class="img-warp"></div>
+            <div class="message-text">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.text }}</p>
+            </div>
+            <div class="shijian">
+              <p>{{ shijianchuo }}</p>
+              <p class="advance">></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</van-pull-refresh>
 </template>
 
 <script>
@@ -46,7 +47,8 @@ export default {
   data () {
     return {
       shuju: [],
-      shijianchuo: ''
+      shijianchuo: '',
+      isLoading: true
     }
   },
   async mounted () {
@@ -55,11 +57,22 @@ export default {
     const currentTime = Date.parse(new Date())
     const beforeTime = Date.parse(res.time)
     const interval = currentTime - beforeTime
+    // 分钟
     const hour = Math.floor((interval / 1000) / 60)
-    if (hour >= 24) {
-      this.shijianchuo = '昨天'
+    // 小时
+    // const day = Math.floor((interval / 1000) / 60 / 60)
+    if (hour >= 60) {
+      // console.log(hour / 60)
+      this.shijianchuo = Math.floor(hour % 60) + '小时前'
+      // console.log(this.shijianchuo)
     } else {
       this.shijianchuo = hour + '分钟前'
+    }
+  },
+  methods: {
+    onRefresh () {
+      this.isLoading = false
+      getLiApi()
     }
   }
 
@@ -67,9 +80,15 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+    .doge {
+      width: 140px;
+      height: 72px;
+      margin-top: 8px;
+      border-radius: 4px;
+    }
   .warp{
     width: 100%;
-    height: 900px;
+    height: 700px;
     background-color: #556F48;
     .mescontent {
       width: 100%;
@@ -94,7 +113,7 @@ export default {
             width: 50px;
           }
           span{
-            font-size: 12px;
+            font-size: 11px;
             font-weight:800 ;
           }
         }
@@ -104,12 +123,12 @@ export default {
       margin-top: 10px;
       background-color: #ffffff;
       width: 100%;
-      height: 200px;
+      // height: 100%;
       font-size:14px;
       li {
         width: 100%;
         height: 50px;
-        border: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -124,6 +143,12 @@ export default {
         .message-text {
           height: 30px;
           margin-top: -10px;
+          h4{
+            font-size: 16px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #000000;
+          }
           p{
             width: 200px;
             overflow: hidden;

@@ -1,6 +1,6 @@
 <template>
 <!-- 首页本地 -->
-  <div>首页本地</div>
+  <div class="index-locality"></div>
 </template>
 
 <script>
@@ -18,4 +18,9 @@ export default {
   methods: {}
 }
 </script>
-<style lang='less' scoped></style>
+<style lang='scss' scoped>
+.index-locality{
+  height: 500px;
+  background: #556F48;
+}
+</style>

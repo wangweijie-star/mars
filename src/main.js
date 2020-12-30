@@ -30,7 +30,11 @@ import {
   DropdownMenu,
   DropdownItem,
   Overlay,
-  PullRefresh
+  PullRefresh,
+  Overlay,
+  PullRefresh,
+  Collapse,
+  CollapseItem
 } from 'vant'
 
 const app = createApp(App)
@@ -59,4 +63,7 @@ app.use(DropdownMenu)
 app.use(DropdownItem)
 app.use(Overlay)
 app.use(PullRefresh)
+app.use(Collapse)
+app.use(CollapseItem)
+
 app.mount('#app')

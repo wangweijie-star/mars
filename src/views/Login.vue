@@ -43,7 +43,7 @@ function submitFrom () {
         position: 'bottom'
       })
       setTimeout(() => {
-        this.$router.go(-1)
+        this.$router.back(1)
       }, 1000)
     }
   }

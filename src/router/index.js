@@ -56,6 +56,7 @@ const routes = [
       }
     ]
   },
+  // 登录页
   {
     path: '/login',
     component: () => import('../views/Login.vue')
@@ -66,13 +67,35 @@ const routes = [
     name: 'twothree',
     component: () => import('../views/TwoThree.vue')
   },
+  // 详情页
   {
-    path: '/details.vue',
+    path: '/details',
     component: () => import('../views/details.vue')
   },
   {
     path: '/cities',
     component: () => import('../views/Cities.vue')
+  },
+  // 规划路线页
+  {
+    path: '/ToProject',
+    component: () => import('../views/index/ToProject.vue'),
+    meta: { requiresAuth: true }
+  },
+  // 便利店组件
+  {
+    path: '/constore',
+    component: () => import('../views/constore.vue')
+  },
+  // 规划路线的详情页
+  {
+    path: '/Project/:id',
+    component: () => import('../components/home/Project.vue')
+  },
+  // 便利店详情页
+  {
+    path: '/commdetails/:id',
+    component: () => import('../views/commDetails.vue')
   }
 ]
 
