@@ -20,6 +20,7 @@ import {
   Button,
   Swipe,
   SwipeItem,
+  Popup,
   Grid,
   GridItem,
   Image as VanImage,
@@ -27,6 +28,9 @@ import {
   Tabs,
   Toast,
   Empty,
+  Cell,
+  CellGroup,
+  ShareSheet,
   DropdownMenu,
   DropdownItem,
   Calendar,
@@ -52,6 +56,13 @@ app.use(SwipeItem)
 app.use(Field)
 app.use(NavBar)
 app.use(Button)
+app.use(Field)
+app.use(NavBar)
+app.use(Button)
+app.use(Popup)
+app.use(CellGroup)
+app.use(Swipe)
+app.use(SwipeItem)
 app.use(Grid)
 app.use(GridItem)
 app.use(VanImage)
@@ -60,9 +71,9 @@ app.use(Tabs)
 app.use(Swipe)
 app.use(SwipeItem)
 app.use(Toast)
-app.use(Tab)
-app.use(Tabs)
 app.use(Empty)
+app.use(Cell)
+app.use(ShareSheet)
 app.use(DropdownMenu)
 app.use(DropdownItem)
 app.use(Calendar)
