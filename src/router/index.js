@@ -54,7 +54,7 @@ const routes = [
   // 登录页
   {
     path: '/more',
-    component: () => import('../views/More.vue'),
+    component: () => import('../views/more.vue'),
     children: []
   },
   {

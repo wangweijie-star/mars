@@ -41,7 +41,7 @@
 
 <script>
 // 请求数据
-import { getLiApi } from '../utils/api.js'
+import { getLiApiname } from '../utils/api.js'
 
 export default {
   data () {
@@ -52,7 +52,7 @@ export default {
     }
   },
   async mounted () {
-    const res = await getLiApi()
+    const res = await getLiApiname()
     this.shuju = res.result
     const currentTime = Date.parse(new Date())
     const beforeTime = Date.parse(res.time)
@@ -72,7 +72,7 @@ export default {
   methods: {
     onRefresh () {
       this.isLoading = false
-      getLiApi()
+      getLiApiname()
     }
   }
 
