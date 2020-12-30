@@ -59,8 +59,21 @@ const routes = [
   {
     path: '/login',
     component: () => import('../views/Login.vue')
+  },
+  // 跳转首页第二块内容的第三部分
+  {
+    path: '/twothree/:biaoti',
+    name: 'twothree',
+    component: () => import('../views/TwoThree.vue')
+  },
+  {
+    path: '/details.vue',
+    component: () => import('../views/details.vue')
+  },
+  {
+    path: '/cities',
+    component: () => import('../views/Cities.vue')
   }
-
 ]
 
 const router = createRouter({

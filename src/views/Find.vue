@@ -48,17 +48,36 @@
   </div>
 
   <!-- mars专题 -->
+  <span class="top-title">mars 专题</span>
   <div class="mars">
-      <span class="top-title">mars 专题</span>
     <div class="mars-list"  v-for="(item,index) in  marslist" :title="item.title" :img="item.img" :text="item.text" :text1="item.text1" :key='index'>
+        <img :src="item.img" alt="" class="list-img">
       <div class="bgcolor">
-        <img :src="item.img" alt="">
         <span class="img-titel">{{item.title}}</span>
       </div>
-        <span class="text">{{item.text}}</span>
-        <span class="text">{{item.text1}}</span>
+        <span class="text1">{{item.text}}</span>
+        <span class="text1">{{item.text1}}</span>
     </div>
   </div>
+
+<!-- 生活玩家 -->
+<div class="life-play">
+  <!-- <span class="life-title">mars 生活玩家</span> -->
+<!-- <div class="life-list">
+<van-swipe class="my-swipe" :autoplay="0" indicator-color="white" v-for="item in lifelist" :key='item._id' :width="220" :height='170'>
+  <van-swipe-item>
+    <img :src="item.img1" alt="">
+  </van-swipe-item>
+    <van-swipe-item>
+    <img :src="item.img2" alt="">
+  </van-swipe-item>
+    <van-swipe-item>
+    <img :src="item.img3" alt="">
+  </van-swipe-item>
+</van-swipe>
+</div> -->
+
+</div>
 
 </main>
 </van-pull-refresh>
@@ -69,7 +88,7 @@
 // import { Form } from 'vant'
 
 // import axios from 'axios'
-import { marslistApi } from '../utils/api'
+import { marslistApi, lifelistApi } from '../utils/api'
 
 export default {
   data () {
@@ -217,6 +236,7 @@ export default {
         ]
       },
       marslist: [],
+      lifelist: [],
       active: 2,
       count: 0,
       isLoading: false
@@ -236,6 +256,10 @@ export default {
   async mounted () {
     const res = await marslistApi()
     this.marslist = res.result
+
+    const req = await lifelistApi()
+    this.lifelist = req.result
+    console.log(this.lifelist)
   }
 
 }
