@@ -1,69 +1,104 @@
 <template>
-<div class="top">
+<div v-if="info">
+  <div class="top">
   <van-nav-bar
     left-text="返回"
-    right-text="分享"
     left-arrow
     @click-left="onClickLeft"
     @click-right="onClickRight"
-  />
-</div>
-<div class="section">
-  <div class="head-photo">
-    <img :src="info.img" alt="">
+  >
+  <template #left>
+    <img src="http://42.192.148.146:1111/images/otherimg/img-22.png" alt="">
+  </template>
+  <template #right>
+    <img src="http://42.192.148.146:1111/images/otherimg/img-24.png" alt="">
+  </template>
+  </van-nav-bar>
   </div>
-  <h2>{{info.name}}</h2>
-  <div class="top-text"><span>1关注</span><span class="fen">0粉丝</span></div>
-  <van-tabs v-model="active" >
-    <van-tab title="mars 城事" style="{background:'#556F48'}"><img src="http://42.192.148.146:1111/images/mine/img2.png" alt=""></van-tab>
-    <van-tab title="mark"><img src="http://42.192.148.146:1111/images/mine/img1.png" alt=""></van-tab>
-    <van-tab title="路线"><img src="http://42.192.148.146:1111/images/mine/img3.png" alt=""></van-tab>
-    <van-tab title="签到"><img src="http://42.192.148.146:1111/images/mine/img2.png" alt=""></van-tab>
-  </van-tabs>
-  <van-share-sheet
-  v-model:show="showShare"
-  title="立即分享给好友"
-  :options="options"
-  @select="onSelect"
-/>
-<van-popup v-model:show="show" position="left" :style="{ width: '50%',height:'100%',background:'#556F48' }" >akjlkdlkf</van-popup >
+  <div class="section">
+    <div @click="goTomaterial()" class="head-photo" >
+        <img :src="info.img" alt="">
+    </div>
+    <h2>{{info.name}}</h2>
+    <div class="top-text"><span>1关注</span><span class="fen">0粉丝</span></div>
+    <van-tabs v-model="active" >
+      <van-tab title="mars 城事" style="{background:'#556F48'}"><img src="http://42.192.148.146:1111/images/mine/img2.png" alt=""></van-tab>
+      <van-tab title="mark"><img src="http://42.192.148.146:1111/images/mine/img1.png" alt=""></van-tab>
+      <van-tab title="路线"><img src="http://42.192.148.146:1111/images/mine/img3.png" alt=""></van-tab>
+      <van-tab title="签到"><img src="http://42.192.148.146:1111/images/mine/img2.png" alt=""></van-tab>
+    </van-tabs>
+    <van-share-sheet
+    v-model:show="showShare"
+    title="立即分享给好友"
+    :options="options"
+    @select="onSelect"
+  />
+  <van-popup v-model:show="show" position="left" :style="{ width: '65%',height:'100%',background:'#556F48' }" >
+    <div>
+      <p><span><img src="http://42.192.148.146:1111/images/otherimg/img-26.png" alt=""></span> Favorites</p>
+      <van-cell title="收藏夹" is-link />
+    </div>
+    <div>
+      <p><span><img src="http://42.192.148.146:1111/images/otherimg/img-25.png" alt=""></span>mars Artist</p>
+      <van-cell title="推荐的地点" is-link />
+    </div>
+    <div>
+      <p><span><img src="http://42.192.148.146:1111/images/otherimg/img-27.png" alt=""></span>mars Points</p>
+      <van-cell title="点数兑换" is-link />
+      <van-cell title="邀请好友" is-link />
+    </div>
+    <div>
+      <p><span><img src="http://42.192.148.146:1111/images/otherimg/img-26.png" alt=""></span>mars LifeMars</p>
+      <van-cell title="潮流好物订单" is-link />
+    </div>
+    <div>
+      <p><span><img src="http://42.192.148.146:1111/images/otherimg/img-28.png" alt=""></span>Setting</p>
+      <van-cell title="设置" is-link />
+    </div>
+
+  </van-popup >
+  </div>
 </div>
 </template>
 
 <script>
 import { ref } from 'vue'
 import { Toast } from 'vant'
-import { userinfoApi } from '../utils/api'
+import { useStore } from 'vuex'
 export default {
   data () {
     return {
-      active: 2,
-      info: {}
+      active: 2
     }
   },
   components: {},
 
-  computed: {},
+  computed: {
+  },
 
   watch: {},
 
   methods: {
-    async getMyInforApi () {
-      const res = await userinfoApi({
-        token: localStorage.getItem('token')
-      })
-      this.info = res.result
-      console.log(res.result)
+    goTomaterial () {
+      this.$router.push('/material')
     }
   },
 
-  created () {},
-
+  created () {
+    // this.$forceUpdate()
+  },
   mounted () {
-    this.getMyInforApi()
+    this.$forceUpdate()
+    this.$store.dispatch('getMyInforApi', {
+      token: localStorage.getItem('token')
+    })
+    console.log(this.info)
+    console.log(this.$store)
   },
   setup () {
     const show = ref(false)
+    const store = useStore()
+    const info = store.state.Info.info
     const showPopup = () => {
       show.value = true
     }
@@ -95,7 +130,8 @@ export default {
       onClickRight,
       show,
       showPopup,
-      onClickLeft
+      onClickLeft,
+      info
     }
   }
 
@@ -113,6 +149,18 @@ export default {
   }
   .van-hairline--bottom::after {
     border-bottom-width: 0rem;
+  }
+  .van-nav-bar__left{
+    img{
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .van-nav-bar__right{
+    img{
+      width: 24px;
+      height: 24px;
+    }
   }
 
 }
@@ -156,6 +204,28 @@ export default {
     font-weight: 800 ;
    }
   }
+  }
+  /deep/ .van-popup{
+    padding-top: 100px;
+    div{
+      p{
+        line-height: 40px;
+        font-size: 20px;
+        font-family: Bookman;
+        color: white;
+        font-weight: 900;
+        span{
+          padding: 5px;
+        }
+        img{
+          width: 25px;
+        }
+      }
+      .van-cell{
+       background-color: rgba($color:#fff, $alpha: 0);
+       color: white;
+      }
+    }
   }
 
 }
