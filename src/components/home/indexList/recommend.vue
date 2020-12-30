@@ -1,9 +1,9 @@
 <template>
 <!-- 首页推荐组件 -->
-  <div class="recomm-warp">
+  <div class="recomm-warp" v-if="recommendLi.length">
     <div class="conent" v-for="item in recommendLi" :key="item._id">
         <div class="imgs">
-          <img :src="item.img" alt="">
+          <img :src="item.img !== undefiend ? item.img : ceshi " alt="">
         </div>
         <div class="synopsis">
           <div class="adress">
@@ -30,7 +30,9 @@
         </div>
     </div>
     <p class="NaNnum">数据有限！我们是有底线的</p>
-    </div>
+  </div>
+
+  <img v-else :src="ceshi" alt="">
   <!-- </div> -->
 </template>
 
@@ -40,7 +42,8 @@ import { getRecommendApi } from '../../../utils/api'
 export default {
   data () {
     return {
-      recommendLi: []
+      recommendLi: [],
+      ceshi: 'img/index-tujian/Recommen-1.png'
     }
   },
   async mounted () {

@@ -3,6 +3,7 @@
   <van-tabs v-model:active="active"
   animated
   sticky
+  swipeable
   color='green'
   line-width='36'
   line-height='3'
@@ -47,7 +48,8 @@ export default {
         this.active = index
       }
     })
-  }
+  },
+  methods: {}
 }
 </script>
 <style lang='scss' scoped>

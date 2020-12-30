@@ -4,15 +4,30 @@
     left-arrow
     @click-left="onClickLeft"
   />
-  <ul>
-    <li v-for="elm in project" :key="elm._id" class="LiProject" @click="goToProject(elm._id)">
-      <img :src="elm.img" alt="">
+  <ul v-if="project.length">
+    <li
+      v-for="elm in project"
+      :key="elm._id" class="LiProject"
+      @click="goToProject(elm._id)"
+
+    >
+      <img
+      :src="elm.img"
+      alt=""
+      >
+    </li>
+  </ul>
+  <!-- 如果没有请求过来 -->
+  <ul v-else v-for="(ceshi,index) in project.length" :key="index">
+    <li>
+      <img
+      :src="ceshi"
+      alt=""
+    >
     </li>
   </ul>
 </template>
-
 <script>
-// import { Form } from 'vant'
 // 引入接口
 import { getToProjectApi } from '../../utils/api.js'
 export default {
@@ -24,15 +39,19 @@ export default {
   },
   data () {
     return {
-      project: []
+      project: [],
+      ceshi: 'img/index-tujian/Recommen-1.png'
     }
   },
+  computed: {},
   methods: {
     onClickLeft () {
       this.$router.push('/mine')
     },
     goToProject (id) {
-      console.log(id)
+      this.$router.push({
+        path: `/Project/${id}`
+      })
     }
   }
 }

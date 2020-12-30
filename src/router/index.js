@@ -76,8 +76,17 @@ const routes = [
   {
     path: '/constore',
     component: () => import('../views/constore.vue')
+  },
+  // 规划路线的详情页
+  {
+    path: '/Project/:id',
+    component: () => import('../components/home/Project.vue')
+  },
+  // 便利店详情页
+  {
+    path: '/commdetails/:id',
+    component: () => import('../views/commDetails.vue')
   }
-
 ]
 
 const router = createRouter({

@@ -1,4 +1,5 @@
 <template>
+<!-- 发布页 -->
   <van-overlay :show="show">
     <div class="wrapper" @click.stop>
         <img src="https://img.yzcdn.cn/vant/doge-fire.jpg" alt="">
