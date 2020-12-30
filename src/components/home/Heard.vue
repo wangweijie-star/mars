@@ -43,9 +43,7 @@ export default {
       if (idx === 6) {
         this.$router.push('/constore')
       }
-    }
-  },
-  methods: {
+    },
     gocities () {
       this.$router.push('/cities')
     }
