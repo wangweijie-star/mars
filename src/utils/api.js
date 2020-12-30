@@ -21,3 +21,9 @@ export const getMoreApi = params => http.get('api/home/moretops', params)
 export const getMorePageApi = params => http.get('api/home/morepages', params)
 // 详情页数据
 export const getDetailApi = params => http.get('api/home/detail', params)
+
+export const marslistApi = params => http.get('/api/home/subject', params)
+// message 信息组件获取数据
+export const getLiApi = params => http.get('api/home/message', params)
+
+export const lifelistApi = params => http.get('/api/home/life', params)

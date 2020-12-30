@@ -48,23 +48,47 @@
   </div>
 
   <!-- mars专题 -->
+  <span class="top-title">mars 专题</span>
   <div class="mars">
-    <span>mars专题</span>
-    <div class="mars-list"  v-for="(item,index) in marslist.slice(0,12)" :title="item.title" :img="item.img" :text="item.text" :text2="item.text2"  :key='index'>
-      <img :src="item.img" alt="">
+    <div class="mars-list"  v-for="(item,index) in  marslist" :title="item.title" :img="item.img" :text="item.text" :text1="item.text1" :key='index'>
+        <img :src="item.img" alt="" class="list-img">
       <div class="bgcolor">
-        <span>{{item.title}}</span>
+        <span class="img-titel">{{item.title}}</span>
       </div>
-      <span>{{item.text}}</span>
-      <span>{{item.text2}}</span>
+        <span class="text1">{{item.text}}</span>
+        <span class="text1">{{item.text1}}</span>
     </div>
   </div>
+
+<!-- 生活玩家 -->
+<div class="life-play">
+  <!-- <span class="life-title">mars 生活玩家</span> -->
+<!-- <div class="life-list">
+<van-swipe class="my-swipe" :autoplay="0" indicator-color="white" v-for="item in lifelist" :key='item._id' :width="220" :height='170'>
+  <van-swipe-item>
+    <img :src="item.img1" alt="">
+  </van-swipe-item>
+    <van-swipe-item>
+    <img :src="item.img2" alt="">
+  </van-swipe-item>
+    <van-swipe-item>
+    <img :src="item.img3" alt="">
+  </van-swipe-item>
+</van-swipe>
+</div> -->
+
+</div>
+
 </main>
 </van-pull-refresh>
 </div>
 </template>
 
 <script>
+// import { Form } from 'vant'
+
+// import axios from 'axios'
+import { marslistApi, lifelistApi } from '../utils/api'
 
 export default {
   data () {
@@ -211,31 +235,13 @@ export default {
           }
         ]
       },
-      marslist: [
-        {
-          img: require('../assets/mars/car.png'),
-          title: '广汽丰田 C-HR x mars 与北广深城市',
-          text: '· Vogue Business 评选出中国 新时尚',
-          text2: '除了K11的尼尔·贝卢法个展，十二月'
-        },
-        {
-          img: require('../assets/mars/bar.png'),
-          title: '到胶片摄影师开的复古咖啡店里，一品',
-          text: '· 体育西网红社区里的安静小店，只专注',
-          text2: '这间法餐与成都本地味道融合的 bistrc'
-        }
-      ],
+      marslist: [],
+      lifelist: [],
       active: 2,
       count: 0,
       isLoading: false
     }
   },
-  components: {},
-
-  computed: {},
-
-  watch: {},
-
   methods: {
     // span跳转
     hrefmore () {
@@ -247,10 +253,14 @@ export default {
       }, 1000)
     }
   },
+  async mounted () {
+    const res = await marslistApi()
+    this.marslist = res.result
 
-  created () {},
-
-  mounted () {}
+    const req = await lifelistApi()
+    this.lifelist = req.result
+    console.log(this.lifelist)
+  }
 
 }
 </script>
