@@ -62,9 +62,9 @@
 
 <!-- 生活玩家 -->
 <div class="life-play">
-  <!-- <span class="life-title">mars 生活玩家</span> -->
-<!-- <div class="life-list">
-<van-swipe class="my-swipe" :autoplay="0" indicator-color="white" v-for="item in lifelist" :key='item._id' :width="220" :height='170'>
+  <!-- <span class="life-title">mars 生活玩家</span>
+<div class="life-list"  v-for="item in lifelist" :key='item._id' >
+<van-swipe class="my-swipe" :autoplay="0" indicator-color="white"  :height='170'>
   <van-swipe-item>
     <img :src="item.img1" alt="">
   </van-swipe-item>
