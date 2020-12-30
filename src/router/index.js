@@ -57,14 +57,6 @@ const routes = [
     children: []
   },
   {
-    path: '/moretwo',
-    component: () => import('../views/MoreTwo.vue')
-  },
-  {
-    path: '/morethree',
-    component: () => import('../views/MoreThree.vue')
-  },
-  {
     path: '/details/:id',
     component: () => import('../views/details.vue')
   },

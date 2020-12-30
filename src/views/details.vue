@@ -18,10 +18,10 @@
   >
     <!-- 第一部分 -->
     <div class="top">
-      <div class="top-img" v-if="listDetail.image">
-      <img :src="listDetail.image" v-if="!listDetail.image" alt="" />
-      </div>
-      <div class="top-noimg"></div>
+      <!-- <div class="top-img" v-if="listDetail.image"> -->
+      <img :src="listDetail.image" alt="" />
+      <!-- </div> -->
+      <div class="top-noimg" v-if="!listDetail.image"></div>
     </div>
     <!-- 中间部分 -->
     <div class="mid">
@@ -119,12 +119,16 @@ export default {
 }
 .top {
   margin-top: 45px;
+  img {
+    width: 100%;
+  }
   .top-noimg {
     height: 120px;
     background-color: #556F48;
   }
 }
 .message {
+  position: relative;
   margin: 0 12px;
   display: flex;
   flex-direction: column;
@@ -132,7 +136,7 @@ export default {
   .images {
     width: 70px;
     position: absolute;
-    top: 66px;
+    top: -60px;
     left: 156px;
     background: #fff;
   }
